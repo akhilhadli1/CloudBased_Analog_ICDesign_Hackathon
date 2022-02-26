@@ -9,5 +9,10 @@
 # Implementation on Synopsys Custom Compiler
 # challenges 
 # Author
+Akhil Hadli,BLDEACET,Vijayapura
 # Acknowledgements 
-CloudBased_Analog_Hackathon
+.Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
+.[https://www.iith.ac.in/events/2022/02/15/Cloud-Based-Analog-IC-Design-Hackathon/]
+.Synopsys India
+.Chinmay Panda,IIT Hyderabad
+
