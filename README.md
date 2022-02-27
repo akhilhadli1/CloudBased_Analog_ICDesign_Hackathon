@@ -46,7 +46,8 @@ The design is basedon modified CMOS inverter and PMOS pass-transistorlogic. When
 
 # WaveForms Obtained
 I was able to get the correct waveforms as the reference circuit
-![final waveform](https://user-images.githubusercontent.com/99066092/155872991-843f4ac1-bdb2-4345-b400-25ef3497de14.PNG)
+![visible waveform](https://user-images.githubusercontent.com/99066092/155874113-c0186fe9-78f0-41c5-8ff7-1a01a92f73b7.PNG)
+
 
 # Challenges 
 
