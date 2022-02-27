@@ -8,14 +8,26 @@ VLSI circuits consists of various analog and digital elements to achive the syst
 
 # Circuit description
 NAND gate is a logic gate which gives the output as HIGH when one or more input are at logic low level,and low if both the inputs are HIGH.This gate is majorly implemented using CMOS logic Implementation.Shown below
-![image](https://user-images.githubusercontent.com/99066092/155870957-d157c57b-36ba-4860-98ff-46ac34fc535a.png)
+
+![nanna](https://user-images.githubusercontent.com/99066092/155873381-01faf299-a87b-4a16-8234-39a635e69eac.png)
+
+
+
+
 Truth Table for the above gate is shown below.
+
 ![image](https://user-images.githubusercontent.com/99066092/155870985-54568206-f40a-4c8c-a1e1-b8262f773eaa.png)
+
 The Above Implementation requries 4 transistor (2-PMOS and 2-NMOS) .Where as In the paper proposed the NAND Gate is Implemented with Three transistor (2-PMOS and 1-NMOS) which can reduce the area on core and power optimized.This is a Low power implementation of traditional CMOS Implementation .This Implementation uses Pass Transistor logic to achive the functionality.
 # Reference Circuit
 ![WhatsApp Image 2022-02-27 at 12 14 52 PM](https://user-images.githubusercontent.com/99066092/155871581-0b5f44b6-0ed4-4156-b193-6a4b3f4f691b.jpeg)
+
+Circuit operation
+The design is basedon modified CMOS inverter and PMOS pass-transistorlogic. When input A is at logic one, the inverter on theleft (M0 & M2) functions as a normal CMOS inverter.Therefore, the output is the complement of input B. Whenthe input A is at logic zero, the CMOS inverter output is at high impedance. However, the PMOS pass-transistor M1 is turned ON and the output gets the logic value as logic 1 (VDD). This circuit achives same output as CMOS NAND gate with optimization in area and power.
+
 # Reference Wave form.
 ![referance waveform](https://user-images.githubusercontent.com/99066092/155871615-c476d500-bed8-42e4-9135-7f8e4ad2a669.PNG)
+
 Circuit operation
 The design is basedon modified CMOS inverter and PMOS pass-transistorlogic. When input A is at logic one, the inverter on theleft (M0 & M2) functions as a normal CMOS inverter.Therefore, the output is the complement of input B. Whenthe input A is at logic zero, the CMOS inverter output is at high impedance. However, the PMOS pass-transistor M1 is turned ON and the output gets the logic value as logic 1 (VDD). This circuit achives same output as CMOS NAND gate with optimization in area and power.
 # Tools Used
