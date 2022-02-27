@@ -10,6 +10,7 @@
 - [Reference Wave form.](#reference-wave-form)
 - [Tools Used](#tools-used)
 - [Simulated Circuit Using Synopsys Tool](#simulated-circuit-using-synopsys-tool)
+- [Netlist](#netlist)
 - [Challenges](#challenges)
 - [Author](#author)
 - [Acknowledgements](#acknowledgements)
@@ -67,6 +68,52 @@ The design is basedon modified CMOS inverter and PMOS pass-transistorlogic. When
  
 I was able to get the correct waveforms as the reference circuit
 ![visible waveform](https://user-images.githubusercontent.com/99066092/155874113-c0186fe9-78f0-41c5-8ff7-1a01a92f73b7.PNG)
+
+# Netlist
+*  Generated for: PrimeSim
+*  Design library name: NAND
+*  Design cell name: threeTan_TB
+*  Design view name: schematic
+.lib 'saed32nm.lib' TT
+
+*Custom Compiler Version S-2021.09
+*Sun Feb 27 08:03:26 2022
+
+.global gnd!
+********************************************************************************
+* Library          : NAND
+* Cell             : threeTan
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt threetan inputa inputb output vdd
+xm1 output inputb vdd vdd p105 w=3.5u l=0.03u nf=1 m=1
+xm0 output inputa inputb vdd p105 w=0.1u l=43n nf=1 m=1
+xm2 output inputa gnd! gnd! n105 w=0.1u l=43n nf=1 m=1
+.ends threetan
+
+********************************************************************************
+* Library          : NAND
+* Cell             : threeTan_TB
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi0 inputa inputb out net6 threetan
+v1 net6 gnd! dc=1.0
+v9 inputb gnd! dc=0 pulse ( 0 1.0 0 0.000001u 0.000001u 2u 4u )
+v10 inputa gnd! dc=0 pulse ( 0 1.0 0 0.000001u 0.000001u 1u 2u )
+c7 out gnd! c=1p
+.tran '0.1u' '10 u' name=tran
+.option primesim_remove_probe_prefix = 0
+.probe v(*) i(*) level=1
+.probe tran v(out) v(inputa) v(inputb)
+.temp 25
+.option primesim_output=wdf
+.option parhier = LOCAL
+.end
+
 
 
 # Challenges 
